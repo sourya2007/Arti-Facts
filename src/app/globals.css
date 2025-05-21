@@ -2,79 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --background: 0 0% 94%; /* Light Gray #F0F0F0 */
+    --foreground: 0 0% 10%; /* Dark Gray for text */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 10%; /* Dark Gray for text on card */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 10%; /* Dark Gray for text on popover */
+
+    --primary: 174 60% 51%; /* Saturated Teal #30D5C8 */
+    --primary-foreground: 0 0% 100%; /* White for text on primary */
+
+    --secondary: 207 44% 90%; /* Lighter Soft Blue */
+    --secondary-foreground: 0 0% 20%; /* Darker Gray for text on secondary */
+
+    --muted: 0 0% 96%; /* Very Light Gray */
+    --muted-foreground: 0 0% 45%; /* Medium Gray for muted text */
+
+    --accent: 207 44% 80%; /* Soft Blue #ADD8E6 */
+    --accent-foreground: 0 0% 10%; /* Dark Gray for text on accent */
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+
+    --border: 0 0% 85%; /* Light Gray border */
+    --input: 0 0% 92%; /* Slightly off-white for input */
+    --ring: 174 60% 51%; /* Teal for focus rings */
+
     --radius: 0.5rem;
+
+    /* Chart colors - can be updated to match new theme if charts are used */
+    --chart-1: 174 60% 51%;
+    --chart-2: 174 50% 61%;
+    --chart-3: 207 44% 70%;
+    --chart-4: 207 34% 80%;
+    --chart-5: 0 0% 70%;
+
+    /* Sidebar variables - adapt if sidebar is used */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 174 60% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 207 44% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 174 60% 51%;
+  }
+
+  .dark {
+    /* Dark theme can be defined here if a toggle is added later */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 174 60% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 174 50% 25%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 207 44% 70%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 174 60% 51%;
+
+    --chart-1: 174 70% 70%;
+    --chart-2: 174 60% 65%;
+    --chart-3: 207 50% 60%;
+    --chart-4: 0 0% 60%;
+    --chart-5: 0 0% 40%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 174 70% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 174 70% 70%;
   }
 }
 
@@ -83,6 +96,81 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-foreground;
+  }
+}
+
+@layer utilities {
+  .summary-fade-in {
+    animation: summaryFadeInAnimation 0.8s ease-out forwards;
+  }
+  @keyframes summaryFadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-page-fade-in-blur {
+    animation: pageFadeInBlurAnimation 0.5s ease-out forwards;
+  }
+
+  @keyframes pageFadeInBlurAnimation {
+    from {
+      opacity: 0;
+      filter: blur(5px);
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0px);
+    }
+  }
+  
+  .blur-fade-in {
+    animation: blurFadeInAnimation 0.7s ease-out forwards;
+    opacity: 0; /* Start fully transparent */
+  }
+
+  @keyframes blurFadeInAnimation {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0px);
+    }
+  }
+
+  /* Analyze button pulse animation */
+  .button-pulse-animation {
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
